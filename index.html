@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>International Rapid Response Group</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="loader">
+      <div class="spinner"></div>
+    </div>
+
+    <div id="grid-overlay">
+      <div class="gridline lat" id="lat-line"></div>
+      <div class="gridline lon" id="lon-line"></div>
+    </div>
+
+    <header>
+      <h1>International Rapid Response Group</h1>
+      <h2>We Cleanse The Wicked</h2>
+    </header>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#roster">Roster</a>
+      <a href="#lore">Lore</a>
+      <a href="#operations">Operations</a>
+      <a href="#join">Join Us</a>
+    </nav>
+
+    <section id="home">
+      <h3>Air Superiority. Tactical Brutality. Unity in Numbers.</h3>
+      <p>
+        We are the IRRG—an elite multinational force forged in fire and
+        precision. Our mission is clear: eliminate chaos, restore order, and
+        dominate the skies.
+      </p>
+    </section>
+
+    <section id="roster">
+      <h2>Company Roster</h2>
+      <div class="company" onclick="showDetails('alpha')">
+        <h3>Alpha Company</h3>
+        <p>
+          Rulers of the skies. Emergency logistics and battlemedics. Swift,
+          airborne, and always ready to extract or deploy.
+        </p>
+      </div>
+      <div class="company" onclick="showDetails('charlie')">
+        <h3>Charlie Company</h3>
+        <p>
+          The heavy hand of IRRG. Masters of armor and firepower. When subtlety
+          fails, Charlie prevails.
+        </p>
+      </div>
+      <div class="company" onclick="showDetails('echo')">
+        <h3>Echo Company</h3>
+        <p>
+          The executioners. Deathly silent. Operate in darkness, unseen and
+          unstoppable. Fear is their weapon.
+        </p>
+      </div>
+
+      <div id="backdrop"></div>
+
+      <div class="details-panel" id="alpha-details">
+        <button class="close-btn" onclick="closePanel()">✖</button>
+        <h3>Alpha Company – Full Briefing</h3>
+        <p>
+          Air superiority specialists. Rapid deployment medics. Logistics under
+          fire, and emergency extraction units.
+        </p>
+      </div>
+
+      <div class="details-panel" id="charlie-details">
+        <button class="close-btn" onclick="closePanel()">✖</button>
+        <h3>Charlie Company – Full Briefing</h3>
+        <p>
+          Heavy armor division. Siege tactics. Mobile turrets and shockwave
+          suppression. Known for overwhelming force and battlefield control.
+        </p>
+      </div>
+
+      <div class="details-panel" id="echo-details">
+        <button class="close-btn" onclick="closePanel()">✖</button>
+        <h3>Echo Company – Full Briefing</h3>
+        <p>
+          Guards of AllFather, Stealth operatives. Night raids. Silent
+          takedowns. Equipped with suppressed weapons, thermal cloaks. Ghosts in
+          the dark.
+        </p>
+      </div>
+    </section>
+
+    <section id="lore">
+      <h2>Faction Lore</h2>
+      <p>
+        This page is reserved for company leaders to document the origin,
+        philosophy, and legacy of IRRG.
+      </p>
+    </section>
+
+    <section id="operations">
+      <h2>Operations Briefing</h2>
+      <p>Mission logs and tactical updates will be posted here by command.</p>
+
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/q0US2grqrDM"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+
+    <section id="join">
+      <h2>Join the IRRG</h2>
+      <p>We cleanse the wicked. Join the elite:</p>
+      <iframe
+        src="https://discord.com/widget?id=1263873303005892680&theme=dark"
+        allowtransparency="true"
+      ></iframe>
+    </section>
+
+    <footer>&copy; 2024 IRRG Command. All rights reserved.</footer>
+
+    <script>
+      function showDetails(company) {
+        document.getElementById("backdrop").classList.add("active");
+
+        document.getElementById("backdrop").classList.remove("active");
+        // Hide all panels first
+        document.querySelectorAll(".details-panel").forEach((panel) => {
+          panel.classList.remove("active");
+        });
+
+        // Show selected panel
+        const panel = document.getElementById(`${company}-details`);
+        panel.classList.add("active");
+
+        // Play open sound
+        document.getElementById("panelOpenSound").play();
+      }
+
+      function closePanel() {
+        document.querySelectorAll(".details-panel").forEach((panel) => {
+          panel.classList.remove("active");
+        });
+
+        // Play close sound
+        document.getElementById("panelCloseSound").play();
+      }
+
+      // ESC key support
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closePanel();
+        }
+      });
+
+      window.addEventListener("load", () => {
+        const loader = document.getElementById("loader");
+        loader.style.opacity = "0";
+        setTimeout(() => (loader.style.display = "none"), 500);
+      });
+
+      const latLine = document.getElementById("lat-line");
+      const lonLine = document.getElementById("lon-line");
+
+      document.addEventListener("mousemove", (e) => {
+        latLine.style.top = `${e.clientY}px`;
+        lonLine.style.left = `${e.clientX}px`;
+      });
+    </script>
+    <audio id="panelOpenSound" src="open.mp3"></audio>
+    <audio id="panelCloseSound" src="close.mp3"></audio>
+  </body>
+</html>

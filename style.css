@@ -1,0 +1,211 @@
+ body {
+        background-color: black; /* or your preferred base */
+        background-image: linear-gradient(
+            to right,
+            rgba(255, 0, 0, 0.2) 1px,
+            transparent 1px
+          ),
+          linear-gradient(to bottom, rgba(255, 0, 0, 0.2) 1px, transparent 1px);
+        background-size: 40px 40px; /* adjust grid spacing */
+      }
+
+      /* Loader Styles */
+      #loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #0a0a0a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      .spinner {
+        border: 6px solid #222;
+        border-top: 6px solid #f44336;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      body {
+        margin: 0;
+        font-family: "Orbitron", sans-serif;
+        background-color: #0a0a0a;
+        color: #f44336;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      header {
+        background-color: #1a1a1a;
+        padding: 40px;
+        text-align: center;
+        border-bottom: 2px solid #f44336;
+        z-index: 2;
+        position: relative;
+      }
+
+      h1 {
+        font-size: 3em;
+        margin: 0;
+      }
+
+      h2 {
+        font-size: 1.5em;
+        margin-top: 10px;
+        color: #ccc;
+      }
+
+      nav {
+        background-color: #111;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        border-bottom: 1px solid #f44336;
+        z-index: 2;
+        position: relative;
+      }
+
+      nav a {
+        color: #f44336;
+        text-decoration: none;
+        margin: 0 20px;
+        font-weight: bold;
+      }
+
+      section {
+        padding: 60px;
+        text-align: center;
+        z-index: 2;
+        position: relative;
+      }
+
+      .company {
+        border: 2px solid #f44336;
+        padding: 20px;
+        margin-bottom: 30px;
+        background-color: #1a1a1a;
+      }
+
+      .company h3 {
+        color: #fff;
+        font-size: 1.8em;
+      }
+
+      .company p {
+        font-size: 1.2em;
+        color: #ccc;
+      }
+
+      iframe {
+        border: none;
+        width: 100%;
+        height: 500px;
+      }
+
+      footer {
+        background-color: #1a1a1a;
+        text-align: center;
+        padding: 20px;
+        color: #777;
+        font-size: 0.9em;
+        z-index: 2;
+        position: relative;
+      }
+
+      /* Gridline Overlay */
+      #grid-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .gridline {
+        position: absolute;
+        background-color: rgba(255, 0, 0, 0.2);
+      }
+
+      .lat {
+        width: 100%;
+        height: 1px;
+      }
+
+      .lon {
+        height: 100%;
+        width: 1px;
+      }
+
+      nav a:hover {
+        color: #fff;
+        text-shadow: 0 0 5px #f44336;
+        transform: scale(1.1);
+        transition: all 0.3s ease;
+      }
+
+      .company:hover {
+        box-shadow: 0 0 15px #f44336;
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+      }
+
+      .details-panel {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 600px;
+  height: 100%;
+  background-color: #1a1a1a;
+  color: #f44336;
+  padding: 30px;
+  box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+  transition: left 0.5s ease;
+  z-index: 10000;
+  overflow-y: auto;
+}
+
+.details-panel.active {
+  left: 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  color: #f44336;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+.close-btn:hover {
+  color: #ff7961;
+}
+
+#backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 2;
+  display: none;
+}
+#backdrop.active {
+  display: block;
+}
+
