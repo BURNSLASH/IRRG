@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About IRRG</title>
+  <link rel="stylesheet" href="master.css">
+  <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+  <video autoplay muted loop playsinline id="bg-video">
+      <source src="world_map.mp4" type="video/mp4" />
+    </video>
+  <header><h1>About Us</h1></header>
+  <main>
+    <section id="aboutText">
+      <h2>"We Cleanse The Wicked"</h2>
+      <p>
+
+<h3>▌│█║▌║▌║ LORE ║▌║▌║█│▌</h3>
+The International Rapid Response Group is a multinational paramilitary organization headquartered in Germany, operating beyond traditional boundaries of jurisdiction. Formed during a time of escalating global conflict, the IRRG was created to confront crises that conventional forces could not resolve. Its mission is to secure peace by any means necessary, regardless of the sacrifices demanded.</p>
+
+<h3>▌│█║▌║▌║ ABOUT US ║▌║▌║█│▌</h3>
+The IRRG is a fictional multinational paramilitary faction within Blackhawk Rescue Mission 5. Founded on 19 July 2024 by AzarothDiablo, the faction originated as a small, invitation-only collective of friends. Over time, its discipline, organization, and unified purpose led to its rise as one of the most active and respected forces within the Asia-Pacific sector of the PL5 community.
+
+<h3>▌│█║▌║▌║ WHAT WE OFFER ║▌║▌║█│▌</h3>
+Proper Moderation<br>
+Friendly & Welcoming Community <br>
+Competent Officers <br>
+From Casual Patrols & Shenanigans to Professional & Planned Operations <br>
+Activity & Skill-based Tier System <br>
+Flying & Driving Licenses so you can brag about having it! <br>
+Our incredibly funny HICOM <br>
+Standard units having no obnoxious LARPing, just fun in a structured way!</p>
+    
+<section id="operations">
+      <h2>Operations Briefing</h2>
+      <p>Mission logs and tactical updates will be posted here by command.</p>
+      <label for="operationSelect">Select Operation:</label>
+      <select id="operationSelect" onchange="loadOperation(this.value)" style="color: aqua; background-color: black; border-radius: 5px; border-color: aqua; border-style: double;">
+        <option value="selection">Select the desired Operation:</option>
+        <option value="C1">Operation Broken Nebula - 2024-05-10</option>
+        <option value="SM1">Operation Veil Breaker</option>
+        <option value="SM2">Operation Siren Song</option>
+        <option value="C2">Operation Vermillion Sword</option>
+      </select>
+
+      <div id="operationDetails" style="margin-top: 40px; display: none">
+        <h3 id="opTitle"></h3>
+        <p id="opDescription"></p>
+        <div class="video-container">
+          <iframe id="opVideo" src="" frameborder="0" allowfullscreen style="height: 400px; width: 750px;"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="lore">
+      <h2>Faction Trailer</h2>
+      <p>
+        Watch our official IRRG trailer, showcasing our might and mission.
+      </p>
+      <iframe
+          src="https://www.youtube.com/embed/aaYTlMHdosg"
+          frameborder="0"
+          allowfullscreen
+          style="width: 750px; height: 400px; overflow-y: auto;"
+        ></iframe>
+      
+    </section>
+
+    
+      </div>
+    </section>
+  </main>
+  <script>
+    function loadOperation(op) {
+        const details = document.getElementById("operationDetails");
+        const title = document.getElementById("opTitle");
+        const desc = document.getElementById("opDescription");
+        const video = document.getElementById("opVideo");
+
+        if (!op) {
+          details.style.display = "none";
+          return;
+        }
+
+        details.style.display = "block";
+
+        const ops = {
+          C1: {
+            title: "Operation Broken Nebula",
+            description:
+              "Stealth insertion into hostile territory. Echo Company deployed under blackout conditions.",
+            video: "https://www.youtube.com/embed/6Qg5B_9MXG0",
+          },
+          SM1: {
+            title: "Operation Veil Breaker",
+            description:
+              "Charlie Company leads armored assault through fortified zone. Heavy resistance expected.",
+            video: "https://www.youtube.com/embed/pYo1y1buL3g",
+          },
+          SM2: {
+            title: "Operation Siren Song",
+            description:
+              "Alpha Company executes precision airstrike on high-value target. No survivors.",
+            video: "https://www.youtube.com/embed/lboaV9nB0Qs",
+          },
+          C2: {
+            title: "Operation Vermillion Sword",
+            description:
+              "Alpha Company executes precision airstrike on high-value target. No survivors.",
+            video: "https://www.youtube.com/embed/xc81DE9gQSU",
+          },
+        };
+
+        title.textContent = ops[op].title;
+        desc.textContent = ops[op].description;
+        video.src = ops[op].video;
+      }
+  </script>
+</body>
+</html>
