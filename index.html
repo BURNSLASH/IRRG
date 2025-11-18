@@ -2,182 +2,156 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>International Rapid Response Group</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IRRG Command Interface</title>
+    <link rel="stylesheet" href="master.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <script src="java.js" defer></script>
   </head>
+  <body class="irrg-ui encrypted-mode">
+    <!-- 🎥 Background Video (always visible) -->
+    <video autoplay muted loop playsinline id="bg-video">
+      <source src="world_map.mp4" type="video/mp4" />
+    </video>
 
-  <body>
-    <div id="loader">
-      <div class="spinner"></div>
-    </div>
+    <!-- 🔓 Boot Sequence
+    <div class="boot-sequence">
+      <video autoplay muted loop playsinline id="bg-video">
+        <source src="world_map.mp4" type="video/mp4" />
+      </video>
+      <div class="encrypted-overlay">
+        <span class="cipher-text">Initializing IRRG Protocol...</span>
+      </div>
+    </div> -->
 
-    <div id="grid-overlay">
-      <div class="gridline lat" id="lat-line"></div>
-      <div class="gridline lon" id="lon-line"></div>
-    </div>
-
-    <header>
-      <h1>International Rapid Response Group</h1>
-      <h2>We Cleanse The Wicked</h2>
-    </header>
-
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#roster">Roster</a>
-      <a href="#lore">Lore</a>
-      <a href="#operations">Operations</a>
-      <a href="#join">Join Us</a>
+    <!-- 🧭 Navigation -->
+    <nav class="command-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <br />
+        
+        <!-- Company Panel Triggers -->
+        <li>
+          <button class="panel-trigger" data-target="alpha">
+            Company Alpha
+          </button>
+        </li>
+        <li>
+          <button class="panel-trigger" data-target="bravo">
+            Company Bravo
+          </button>
+        </li>
+        <li>
+          <button class="panel-trigger" data-target="charlie">
+            Company Charlie
+          </button>
+        </li>
+      </ul>
     </nav>
 
-    <section id="home">
-      <h3>Air Superiority. Tactical Brutality. Unity in Numbers.</h3>
+    <!-- 🛰️ Intel Section -->
+    <section id="intel" class="faction-intel">
+      <h2>Faction Intel</h2>
+      <div class="intel-stream">
+        <p>Encrypted data streams incoming...</p>
+        <div class="intel-log"></div>
+      </div>
+    </section>
+
+    <!-- 🧭 Mission Deck -->
+    <section id="operations" class="mission-deck">
+      <h2>Mission Deck</h2>
+      <div class="mission-log">
+        <div class="mission-card">
+          <h3>Recon Sweep</h3>
+          <p>Status: Pending Deployment</p>
+          <button class="deploy-btn" data-mission="recon">Deploy</button>
+        </div>
+        <div class="mission-card">
+          <h3>Sabotage Protocol</h3>
+          <p>Status: Awaiting Clearance</p>
+          <button class="deploy-btn" data-mission="sabotage">Deploy</button>
+        </div>
+        <div class="mission-card">
+          <h3>Obelisk Activation</h3>
+          <p>Status: Locked</p>
+          <button class="deploy-btn" data-mission="obelisk">Restricted</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🗄️ Data Vault -->
+    <section id="archives" class="data-vault">
+      <h2>Data Vault</h2>
+      <div class="vault-entries">
+        <p>Accessing historical records...</p>
+        <ul class="vault-list">
+          <li>Log #001: IRRG Genesis Protocol</li>
+          <li>Log #002: Delta Collapse Report</li>
+          <li>Log #003: Cipher Fragment - Obelisk</li>
+          <li>Log #004: Faction Alpha Uplink Trace</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 🔐 Secure Uplink -->
+    <section id="uplink" class="secure-uplink">
+      <h2>Secure Uplink</h2>
+      <form id="uplink-form">
+        <label for="uplink-code">Enter Command Code:</label>
+        <input
+          type="text"
+          id="uplink-code"
+          name="uplink-code"
+          placeholder="e.g. IRRG-ALPHA"
+        />
+        <button type="submit">Transmit</button>
+      </form>
+      <div class="uplink-response"></div>
+    </section>
+    <!-- Company Panels -->
+    <div id="company-alpha" class="company-panel">
+      <button class="close-panel">&times;</button>
+      <h2>Company Alpha</h2>
       <p>
-        We are the IRRG—an elite multinational force forged in fire and
-        precision. Our mission is clear: eliminate chaos, restore order, and
-        dominate the skies.
+        Encrypted dossier: Alpha specializes in reconnaissance and rapid
+        deployment.
       </p>
-    </section>
+    </div>
 
-    <section id="roster">
-      <h2>Company Roster</h2>
-      <div class="company" onclick="showDetails('alpha')">
-        <h3>Alpha Company</h3>
-        <p>
-          Rulers of the skies. Emergency logistics and battlemedics. Swift,
-          airborne, and always ready to extract or deploy.
-        </p>
-      </div>
-      <div class="company" onclick="showDetails('charlie')">
-        <h3>Charlie Company</h3>
-        <p>
-          The heavy hand of IRRG. Masters of armor and firepower. When subtlety
-          fails, Charlie prevails.
-        </p>
-      </div>
-      <div class="company" onclick="showDetails('echo')">
-        <h3>Echo Company</h3>
-        <p>
-          The executioners. Deathly silent. Operate in darkness, unseen and
-          unstoppable. Fear is their weapon.
-        </p>
-      </div>
-
-      <div id="backdrop"></div>
-
-      <div class="details-panel" id="alpha-details">
-        <button class="close-btn" onclick="closePanel()">✖</button>
-        <h3>Alpha Company – Full Briefing</h3>
-        <p>
-          Air superiority specialists. Rapid deployment medics. Logistics under
-          fire, and emergency extraction units.
-        </p>
-      </div>
-
-      <div class="details-panel" id="charlie-details">
-        <button class="close-btn" onclick="closePanel()">✖</button>
-        <h3>Charlie Company – Full Briefing</h3>
-        <p>
-          Heavy armor division. Siege tactics. Mobile turrets and shockwave
-          suppression. Known for overwhelming force and battlefield control.
-        </p>
-      </div>
-
-      <div class="details-panel" id="echo-details">
-        <button class="close-btn" onclick="closePanel()">✖</button>
-        <h3>Echo Company – Full Briefing</h3>
-        <p>
-          Guards of AllFather, Stealth operatives. Night raids. Silent
-          takedowns. Equipped with suppressed weapons, thermal cloaks. Ghosts in
-          the dark.
-        </p>
-      </div>
-    </section>
-
-    <section id="lore">
-      <h2>Faction Lore</h2>
+    <div id="company-bravo" class="company-panel">
+      <button class="close-panel">&times;</button>
+      <h2>Company Bravo</h2>
       <p>
-        This page is reserved for company leaders to document the origin,
-        philosophy, and legacy of IRRG.
+        Encrypted dossier: Bravo handles heavy assault and siege operations.
       </p>
-    </section>
+    </div>
 
-    <section id="operations">
-      <h2>Operations Briefing</h2>
-      <p>Mission logs and tactical updates will be posted here by command.</p>
-
-      <div class="video-container">
-        <iframe
-          src="https://www.youtube.com/embed/q0US2grqrDM"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </section>
-
+    <div id="company-charlie" class="company-panel">
+      <button class="close-panel">&times;</button>
+      <h2>Company Charlie</h2>
+      <p>
+        Encrypted dossier: Charlie is tasked with covert infiltration and
+        sabotage.
+      </p>
+    </div>
     <section id="join">
-      <h2>Join the IRRG</h2>
-      <p>We cleanse the wicked. Join the elite:</p>
-      <iframe
-        src="https://discord.com/widget?id=1263873303005892680&theme=dark"
-        allowtransparency="true"
-      ></iframe>
+      <div class="discord-container">
+        <h2>Join the IRRG</h2>
+        <p>We cleanse the wicked. Join the elite:</p>
+        <iframe
+          src="https://discord.com/widget?id=1263873303005892680&theme=dark"
+          allowtransparency="true"
+          style="width: 900px;height: 400px;"
+        ></iframe>
+        <button id="discJoin" href="https://discord.gg/64TZzNhA" type="submit"  >JOIN</button>
+      </div>
     </section>
-
-    <footer>&copy; 2024 IRRG Command. All rights reserved.</footer>
-
-    <script>
-      function showDetails(company) {
-        document.getElementById("backdrop").classList.add("active");
-
-        document.getElementById("backdrop").classList.remove("active");
-        // Hide all panels first
-        document.querySelectorAll(".details-panel").forEach((panel) => {
-          panel.classList.remove("active");
-        });
-
-        // Show selected panel
-        const panel = document.getElementById(`${company}-details`);
-        panel.classList.add("active");
-
-        // Play open sound
-        document.getElementById("panelOpenSound").play();
-      }
-
-      function closePanel() {
-        document.querySelectorAll(".details-panel").forEach((panel) => {
-          panel.classList.remove("active");
-        });
-
-        // Play close sound
-        document.getElementById("panelCloseSound").play();
-      }
-
-      // ESC key support
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") {
-          closePanel();
-        }
-      });
-
-      window.addEventListener("load", () => {
-        const loader = document.getElementById("loader");
-        loader.style.opacity = "0";
-        setTimeout(() => (loader.style.display = "none"), 500);
-      });
-
-      const latLine = document.getElementById("lat-line");
-      const lonLine = document.getElementById("lon-line");
-
-      document.addEventListener("mousemove", (e) => {
-        latLine.style.top = `${e.clientY}px`;
-        lonLine.style.left = `${e.clientX}px`;
-      });
-    </script>
-    <audio id="panelOpenSound" src="open.mp3"></audio>
-    <audio id="panelCloseSound" src="close.mp3"></audio>
   </body>
 </html>
