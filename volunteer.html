@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Volunteer Registration</title>
+  <link rel="stylesheet" href="master.css">
+  <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+  <video autoplay muted loop playsinline id="bg-video">
+      <source src="world_map.mp4" type="video/mp4" />
+    </video>
+  <header><h1>Volunteer with IRRG</h1></header>
+  <main>
+    <form action="register.php" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required><br><br>
+      <input type="email" name="email" placeholder="Email" required><br><br>
+      <input type="text" name="interest" placeholder="Area of Interest" required><br><br>
+      <button type="submit">Register</button>
+    </form>
+  </main>
+</body>
+</html>
