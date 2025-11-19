@@ -11,10 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // ─── Boot Sequence Finite Rotation ─────────────────────────────────────
   const bootMessages = [
     "Decrypting IRRG Core...",
-    "Establishing Secure Link...",
     "Faction Protocols Verified.",
     "Boot Sequence Complete.",
-    "Encrypted Uplink Ready.",
     "Welcome to IRRG"
   ];
   const cipherElem   = document.querySelector(".cipher-text");
