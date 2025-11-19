@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>About IRRG</title>
-  <link rel="stylesheet" href="master.css">
-  <link
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IRRG Command Interface</title>
+    <link rel="stylesheet" href="master.css" />
+    <link
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
       rel="stylesheet"
     />
-</head>
+    
+  </head>
 <body>
   <video autoplay muted loop playsinline id="bg-video">
       <source src="world_map.mp4" type="video/mp4" />
     </video>
-  <header><h1>About Us</h1></header>
+  
+  <header><h1 style="font-family: 'Orbitron', sans-serif; color: aqua;">About Us</h1></header>
+ 
+  <section>
+  <nav class="command-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <br>
+      </section>
+
   <main>
     <section id="aboutText">
       <h2>"We Cleanse The Wicked"</h2>
@@ -73,6 +88,11 @@ Standard units having no obnoxious LARPing, just fun in a structured way!</p>
       </div>
     </section>
   </main>
+  <section>
+<footer style="font-family: 'Orbitron', sans-serif; color: aqua; align-content: center;">
+INTERNATIONAL RAPID RESPONSE GROUP, est: 2024, All Rights Reserved
+</footer>
+  </section>
   <script>
     function loadOperation(op) {
         const details = document.getElementById("operationDetails");
@@ -91,25 +111,25 @@ Standard units having no obnoxious LARPing, just fun in a structured way!</p>
           C1: {
             title: "Operation Broken Nebula",
             description:
-              "Stealth insertion into hostile territory. Echo Company deployed under blackout conditions.",
+              "IRRG intercepted a SOS signal from the Island of Ronograd. True to its name, the organization immediately responded. But things did not go as planned with no place to land and aircraft lost. IRRG was forced in a standoff in a defensive position for an Hour",
             video: "https://www.youtube.com/embed/6Qg5B_9MXG0",
           },
           SM1: {
             title: "Operation Veil Breaker",
             description:
-              "Charlie Company leads armored assault through fortified zone. Heavy resistance expected.",
+              "IRRG dispatch their operators into the location where IRRG has lost contact with the entry team. The consequences faced are classified",
             video: "https://www.youtube.com/embed/pYo1y1buL3g",
           },
           SM2: {
             title: "Operation Siren Song",
             description:
-              "Alpha Company executes precision airstrike on high-value target. No survivors.",
+              "Prominent Figure Siren located, IRRG raids the compound",
             video: "https://www.youtube.com/embed/lboaV9nB0Qs",
           },
           C2: {
             title: "Operation Vermillion Sword",
             description:
-              "Alpha Company executes precision airstrike on high-value target. No survivors.",
+              "Depot is the next Target, we're no longer on the defensive",
             video: "https://www.youtube.com/embed/xc81DE9gQSU",
           },
         };
