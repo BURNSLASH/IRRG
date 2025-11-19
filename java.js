@@ -32,9 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
           bootSeqElem.classList.add("hidden");
           initializeAppFeatures();
         });
-      }, 1000);
+      }, 500);
     }
-  }, 3000);
+  }, 1000);
 
   // ─── Initialize Remaining Features ─────────────────────────────────────
   function initializeAppFeatures() {
