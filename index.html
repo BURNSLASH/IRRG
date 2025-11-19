@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IRRG Command Interface</title>
     <link rel="stylesheet" href="master.css" />
+    
     <link
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
       rel="stylesheet"
@@ -12,12 +13,13 @@
     <script src="java.js" defer></script>
   </head>
   <body class="irrg-ui encrypted-mode">
-    <!-- 🎥 Background Video (always visible) -->
+    
+    <!--  Background Video (always visible) -->
     <video autoplay muted loop playsinline id="bg-video">
       <source src="world_map.mp4" type="video/mp4" />
     </video>
 
-     
+    <!--  Boot Sequence-->
     <div class="boot-sequence">
       <video autoplay muted loop playsinline id="bg-video">
         <source src="world_map.mp4" type="video/mp4" />
@@ -25,37 +27,51 @@
       <div class="encrypted-overlay">
         <span class="cipher-text">Initializing IRRG Protocol...</span>
       </div>
-    </div>
+    </div> 
 
-    <!-- 🧭 Navigation -->
+    <!--  Navigation -->
+     <div id="header">
+      
+     <header><img src="IRRG.gif" alt="IRRG.gif" style="width: 60px;height: 60px;padding-top: 0px;">
+      INTERNATIONAL RAPID RESPONSE GROUP
+      <img src="IRRG.gif" alt="IRRG.gif" style="width: 60px;height: 60px;padding-top: 0px;">
+    </header>
+     </div>
+
+
+     <section>
     <nav class="command-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="volunteer.html">Volunteer</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <br />
-        
+        <br>
+      </section>  
+    </nav>
+        <nav class="command-nav">
         <!-- Company Panel Triggers -->
-        <li>
+         <Section style="align-items: center;">
+        
           <button class="panel-trigger" data-target="alpha">
-            Company Alpha
+           Alpha Company
           </button>
-        </li>
-        <li>
+        
+        
           <button class="panel-trigger" data-target="bravo">
-            Company Bravo
+            Bravo Company
           </button>
-        </li>
-        <li>
+        
+      
           <button class="panel-trigger" data-target="charlie">
-            Company Charlie
+           Charlie Company
           </button>
-        </li>
-      </ul>
+        
+        </Section>
+      
     </nav>
 
-    <!-- 🛰️ Intel Section -->
+    <!--  Intel Section -->
     <section id="intel" class="faction-intel">
       <h2>Faction Intel</h2>
       <div class="intel-stream">
@@ -64,7 +80,7 @@
       </div>
     </section>
 
-    <!-- 🧭 Mission Deck -->
+    <!--  Mission Deck -->
     <section id="operations" class="mission-deck">
       <h2>Mission Deck</h2>
       <div class="mission-log">
@@ -86,7 +102,7 @@
       </div>
     </section>
 
-    <!-- 🗄️ Data Vault -->
+    <!--  Data Vault -->
     <section id="archives" class="data-vault">
       <h2>Data Vault</h2>
       <div class="vault-entries">
@@ -100,7 +116,7 @@
       </div>
     </section>
 
-    <!-- 🔐 Secure Uplink -->
+    <!--  Secure Uplink -->
     <section id="uplink" class="secure-uplink">
       <h2>Secure Uplink</h2>
       <form id="uplink-form">
@@ -149,11 +165,18 @@
           src="https://discord.com/widget?id=1263873303005892680&theme=dark"
           allowtransparency="true"
           style="width: 900px;height: 400px;"
-        ></iframe>
-        <button id="discJoin" href="https://discord.gg/64TZzNhA" type="submit"  >JOIN</button>
+        ></iframe><br><br>
+        <button id="discJoin" href="https://discord.gg/64TZzNhA" type="submit"><a style="text-decoration: none; color: black;" href="https://discord.gg/64TZzNhA">JOIN</a></button>
       </div>
     </section>
+    <section>
+<footer style="font-family: 'Orbitron', sans-serif; color: aqua; align-content: center;">
+INTERNATIONAL RAPID RESPONSE GROUP, est: 2024, All Rights Reserved
+</footer>
+
+  </section>
+
+  
+
   </body>
 </html>
-
-
