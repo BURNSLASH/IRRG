@@ -1,25 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Volunteer Registration</title>
-  <link rel="stylesheet" href="master.css">
-  <link
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volunteer Registration</title>
+    <link rel="stylesheet" href="master.css" />
+    <link
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
       rel="stylesheet"
     />
-</head>
+    
+  </head>
 <body>
   <video autoplay muted loop playsinline id="bg-video">
       <source src="world_map.mp4" type="video/mp4" />
     </video>
-  <header><h1>Volunteer with IRRG</h1></header>
+    <section>
+    <nav class="command-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <br>
+      </section>
+  <section>
   <main>
-    <form action="register.php" method="POST">
+    <h2 style="font-family: 'Orbitron', sans-serif; color: aqua; align-content: center;">Volunteer Registration</h2>
+    <form action="register.php" method="POST" style="font-family: 'Orbitron', sans-serif; color: aqua; align-content: center;">
+      <label for="vName">Enter your Discord Username:</label><br><br>
       <input type="text" name="name" placeholder="Full Name" required><br><br>
+      <label for="email">Enter your Email:</label><br><br>
       <input type="email" name="email" placeholder="Email" required><br><br>
+      <label for="c_interest">Enter the role you wanna perform:</label><br><br>
       <input type="text" name="interest" placeholder="Area of Interest" required><br><br>
+      <label for="faction_info">Enter the faction you're from (if any):</label><br><br>
+      <input type="text" name="faction_info" placeholder="Name of Faction"><br><br>
       <button type="submit">Register</button>
     </form>
   </main>
+  </section>
+  <section>
+<footer style="font-family: 'Orbitron', sans-serif; color: aqua; align-content: center;">
+INTERNATIONAL RAPID RESPONSE GROUP, est: 2024, All Rights Reserved
+</footer>
+  </section>
 </body>
 </html>
