@@ -5,7 +5,7 @@ body.irrg-ui {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
   background-color: #000;
-  color: #0ff;
+  color: rgb(255, 0, 0);
   overflow-x: hidden;
 }
 
@@ -25,15 +25,15 @@ section {
   margin: 2rem auto;
   padding: 2rem;
   background: rgba(0, 0, 0, 0.85);
-  border: 1px solid #0ff;
+  border: 1px solid rgb(255, 0, 0);
   border-radius: 8px;
-  box-shadow: 0 0 10px #0ff;
+  box-shadow: 0 0 10px rgb(255, 0, 0);
 }
 /* About page section */
 #aboutText{
   text-align: center;
   text-overflow: ellipsis;
-  color: #0ff;
+  color: rgb(255, 0, 0);
   font : blue;
   font-family: 'Orbitron', sans-serif;
 }
@@ -80,7 +80,7 @@ section h2 {
 .encrypted-overlay {
   background: rgba(0, 0, 0, 0.7);
   padding: 1rem 2rem;
-  border: 2px solid #0ff;
+  border: 2px solid rgb(255, 0, 0);
   animation: flicker 2s infinite;
 }
 
@@ -128,7 +128,7 @@ section h2 {
 }
 
 .command-nav a {
-  color: #0ff;
+  color: rgb(255, 0, 0);
   text-decoration: none;
   font-weight: bold;
   padding: 0.5rem 1rem;
@@ -146,7 +146,7 @@ header{
   padding-top: 50px;
   text-align: center;
   text-decoration: double;
-  text-shadow: #0ff;
+  text-shadow: rgb(255, 0, 0);
   font-size: xx-large;
  
   
@@ -182,7 +182,7 @@ header{
 
 .mission-card {
   background-color: #111;
-  border: 1px solid #0ff;
+  border: 1px solid rgb(255, 0, 0);
   padding: 1rem;
   border-radius: 6px;
   transition: transform 0.3s ease, border-color 0.3s ease;
@@ -190,12 +190,12 @@ header{
 
 .mission-card:hover {
   transform: scale(1.02);
-  border-color: #f0f;
+  border-color: rgb(0, 4, 255);
 }
 
 /* Buttons inside mission cards */
 .deploy-btn {
-  background-color: #0ff;
+  background-color: rgb(255, 0, 0);
   color: #000;
   font-weight: bold;
   padding: 0.5rem 1rem;
@@ -206,7 +206,7 @@ header{
 }
 
 .deploy-btn:hover:not(:disabled) {
-  background-color: #f0f;
+  background-color: rgb(0, 0, 0);
   color: #fff;
 }
 
@@ -227,7 +227,7 @@ header{
 
 .vault-list li {
   padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+  border-bottom: 1px solid rgb(255, 1, 1);
 }
 
 /* ─────────────────────────────
@@ -243,13 +243,13 @@ header{
 #uplink-code {
   padding: 0.5rem;
   background-color: #000;
-  color: #0ff;
-  border: 1px solid #0ff;
+  color: rgb(255, 0, 0);
+  border: 1px solid rgb(255, 0, 0);
   border-radius: 4px;
 }
 
 button[type="submit"] {
-  background-color: #0ff;
+  background-color: rgb(255, 0, 0);
   color: #000;
   font-weight: bold;
   padding: 0.5rem;
@@ -260,8 +260,11 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #f0f;
+  background-color: rgb(0, 0, 0);
   color: #fff;
+  border-color: #f00;
+  border-width: 2px;
+  text-decoration: none
 }
 
 /* Uplink response messages */
@@ -287,7 +290,7 @@ button[type="submit"]:hover {
   max-width: 500px;
   height: 100%;
   background: rgba(0, 0, 0, 0.95);
-  border-left: 2px solid #0ff;
+  border-left: 2px solid rgb(255, 0, 0);
   box-shadow: -5px 0 15px rgba(0, 255, 255, 0.3);
   padding: 2rem;
   z-index: 20;
@@ -310,20 +313,20 @@ button[type="submit"]:hover {
   left: 1rem;
   background: none;
   border: none;
-  color: #0ff;
+  color: rgb(255, 0, 0);
   font-size: 2rem;
   cursor: pointer;
   transition: color 0.3s;
 }
 
 .close-panel:hover {
-  color: #f0f;
+  color: rgb(0, 0, 0);
 }
 
 .panel-trigger {
   background: none;
-  border: 1px solid #0ff;
-  color: #0ff;
+  border: 1px solid rgb(255, 0, 0);
+  color: rgb(255, 0, 0);
   font-weight: bold;
   padding: 0.4rem 0.8rem;
   border-radius: 4px;
@@ -332,7 +335,7 @@ button[type="submit"]:hover {
 }
 
 .panel-trigger:hover {
-  background-color: #0ff;
+  background-color: rgb(255, 0, 0);
   color: #000;
 }
 
